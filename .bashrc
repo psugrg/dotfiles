@@ -128,5 +128,7 @@ function git-branch-prompt {
 }
 PS1="\u@\h \[\033[0;36m\]\W\[\033[0m\]\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\] \$ "
 
+# Call Neofetch for some extra info on startup
 neofetch
+
 alias config='/usr/bin/git --git-dir=/home/p/.cfg/ --work-tree=/home/p'
