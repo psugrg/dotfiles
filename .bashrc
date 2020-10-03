@@ -158,6 +158,3 @@ ex ()
   fi
 }
 
-#ignore upper and lowercase when TAB completion
-bind "set completion-ignore-case on"
-
