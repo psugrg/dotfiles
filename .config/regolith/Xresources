@@ -1,1 +1,4 @@
 i3-wm.bar.position: top
+i3-wm.workspace.01.name: 1:
+i3-wm.workspace.02.name: 2:
+i3-wm.workspace.03.name: 3:
