@@ -21,5 +21,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Status line
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    " Git support
+    Plug 'mhinz/vim-signify'
+    " Project management
+    Plug 'mhinz/vim-startify'
 
     call plug#end()
