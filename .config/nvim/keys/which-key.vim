@@ -28,11 +28,39 @@ let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle'  , 'comment' ]
 let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'explorer' ]
 let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
 let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
-let g:which_key_map['r'] = [ ':Ranger'                    , 'ranger' ]
+let g:which_key_map['r'] = [ ':RnvimrToggle'              , 'ranger' ]
 let g:which_key_map['S'] = [ ':Startify'                  , 'start screen' ]
 let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
 let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
+
+" c is for configuration
+let g:which_key_map.c = {
+      \ 'name' : '+configuration' ,
+      \ 's' : [':source $MYVIMRC'        , 'source configuration'],
+      \ 'm' : [':e $HOME/.config/nvim/keys/mappings.vim'        , 'key mappings'],
+      \ 'w' : [':e $HOME/.config/nvim/keys/which-key.vim'        , 'which-key configuration'],
+      \ 'g' : [':e $HOME/.config/nvim/general/settings.vim'        , 'general settings']
+      \}
+
+" b is for buffers
+let g:which_key_map.b = {
+      \ 'name' : '+buffers' ,
+      \ 'n' : [':bnext'       , 'next'],
+      \ 'p' : [':bprev'       , 'previous'],
+      \ 'd' : [':bdelete'          , 'delete'],
+      \ 'b' : [':enew'        , 'new buffer']
+      \}
+
+" t is for tabs
+let g:which_key_map.t = {
+      \ 'name' : '+tabs' ,
+      \ 'n' : [':tabnext'       , 'next'],
+      \ 'p' : [':tabprevious'   , 'previous'],
+      \ 'd' : [':tabclose'      , 'delete'],
+      \ 'm' : ['<C-W>T'         , 'move window (split) to new tab'],
+      \ 't' : [':tabnew'        , 'new tab']
+      \}
 
 " s is for search
 let g:which_key_map.s = {

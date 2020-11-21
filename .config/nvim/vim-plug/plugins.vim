@@ -16,4 +16,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'jiangmiao/auto-pairs'
     " Which Key - a port of emacs-which-key
     Plug 'liuchengxu/vim-which-key'
+    " Ranger file manager
+    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+    " Status line
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
     call plug#end()
