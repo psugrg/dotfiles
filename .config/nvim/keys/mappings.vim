@@ -33,20 +33,23 @@ nnoremap q :bd<CR>
 nnoremap <C-s> :w<CR>
 " Alternate way to quit
 nnoremap <C-Q> :q<CR>
-" Use control-c instead of escape
-nnoremap <C-c> <Esc>
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Better tabbing
-vnoremap < <gv
-vnoremap > >gv
+vnoremap <S-TAB> <gv
+vnoremap <TAB> >gv
 
 " Better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" Close a window with CTRL-C
+noremap <C-c> :wq<CR>
 
-nnoremap <Leader>o o<Esc>^Da
-nnoremap <Leader>O O<Esc>^Da
+" Better comments with CTRL-/
+" Note: for some reason vim registers CTRL+/ as CTRL+_ hence <C-_> in
+" configuration
+nnoremap <C-_> :Commentary<CR>
+vnoremap <C-_> :Commentary<CR>
