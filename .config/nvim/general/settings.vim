@@ -22,9 +22,9 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set laststatus=2                        " Always display the status line
-"set number                             " Absolute line numbers
-set relativenumber                      " Relative line numbers
-set cursorline                          " Enable highlighting of the current line
+set number                             " Absolute line numbers
+" set relativenumber                      " Relative line numbers
+" set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
 set showtabline=1                       " Show tabs only when ther's more than one active tab
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore

@@ -31,5 +31,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'airblade/vim-rooter'
     " Better comments
     Plug 'tpope/vim-commentary'
+    " Quickscope - an always-on highlight for an unique characrer
+    Plug 'unblevable/quick-scope'
     
     call plug#end()
