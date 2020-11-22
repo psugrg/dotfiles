@@ -25,5 +25,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mhinz/vim-signify'
     " Project management
     Plug 'mhinz/vim-startify'
+    " Searching with FZF (FuzzyFind)
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'airblade/vim-rooter'
 
     call plug#end()

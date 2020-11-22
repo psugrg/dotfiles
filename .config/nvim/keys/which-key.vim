@@ -24,23 +24,23 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Single mappings
-let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle'  , 'comment' ]
-let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'explorer' ]
-let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
+"let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle'  , 'comment' ]
+"let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'explorer' ]
+"let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
 let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
 let g:which_key_map['r'] = [ ':RnvimrToggle'              , 'ranger' ]
 let g:which_key_map['S'] = [ ':Startify'                  , 'start screen' ]
-let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
+"let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
-let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
+"let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
 
 " c is for configuration
 let g:which_key_map.c = {
       \ 'name' : '+configuration' ,
-      \ 's' : [':source $MYVIMRC'        , 'source configuration'],
-      \ 'm' : [':e $HOME/.config/nvim/keys/mappings.vim'        , 'key mappings'],
-      \ 'w' : [':e $HOME/.config/nvim/keys/which-key.vim'        , 'which-key configuration'],
-      \ 'g' : [':e $HOME/.config/nvim/general/settings.vim'        , 'general settings']
+      \ 'v' : [':e $HOME/.config/nvim/'                           , 'nvim configuration folder'],
+      \ 'c' : [':e $HOME/.config/'                                , '.config folder'],
+      \ 's' : [':AirlineToggle | source $MYVIMRC | AirlineToggle' , 'source configuration'],
+      \ 'p' : [':PlugInstall'                                     , 'install plugins'],
       \}
 
 " b is for buffers
@@ -60,6 +60,15 @@ let g:which_key_map.t = {
       \ 'd' : [':tabclose'      , 'delete'],
       \ 'm' : ['<C-W>T'         , 'move window (split) to new tab'],
       \ 't' : [':tabnew'        , 'new tab']
+      \}
+
+" g is for buffers
+let g:which_key_map.g = {
+      \ 'name' : '+git' ,
+      \ 'j' : ['<plug>(signify-next-hunk)'       , 'next'],
+      \ 'k' : ['<plug>(signify-prev-hunk)'       , 'previous'],
+      \ 'J' : ['9999<leader>gJ'                  , '9999<leader>gJ'],
+      \ 'K' : ['9999<leader>gk'                  , '9999<leader>gK']
       \}
 
 " s is for search

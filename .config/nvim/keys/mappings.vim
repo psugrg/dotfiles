@@ -16,22 +16,23 @@ inoremap kj <Esc>
 inoremap <c-u> <ESC>viwUi
 nnoremap <c-u> viwU<Esc>
 
-" TAB - Switch tabs forward
-nnoremap <TAB> :tabnext<CR>
-" SHIFT-TAB Switch tabs backwards
-nnoremap <S-TAB> :tabprevious<CR>
+" ] - Switch tabs forward
+nnoremap ] :tabnext<CR>
+" [ - Switch tabs backwards
+nnoremap [ :tabprevious<CR>
 
-" CTRL-TAB in general mode will move to text buffer
-nnoremap ] :bnext<CR>
-" CTRL-SHIFT-TAB will go back
-nnoremap [ :bprevious<CR>
+" TAB in general mode will move to text buffer
+nnoremap <TAB> :bnext<CR>
+" SHIFT-TAB will go back
+nnoremap <S-TAB> :bprevious<CR>
+
+" Close current buffer 
+nnoremap q :bd<CR>
 
 " Alternate way to save
 nnoremap <C-s> :w<CR>
-" Alternate way to write and quit
-nnoremap <C-Q> :wq!<CR>
 " Alternate way to quit
-nnoremap q :q<CR>
+nnoremap <C-Q> :q<CR>
 " Use control-c instead of escape
 nnoremap <C-c> <Esc>
 " <TAB>: completion.

@@ -26,7 +26,7 @@ set laststatus=2                        " Always display the status line
 set relativenumber                      " Relative line numbers
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
-set showtabline=2                       " Show tabs only when ther's more than one active tab
+set showtabline=1                       " Show tabs only when ther's more than one active tab
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
