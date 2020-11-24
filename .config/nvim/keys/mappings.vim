@@ -11,15 +11,19 @@ nnoremap <M-l>    :vertical resize +2<CR>
 " I hate escape more than anything else
 inoremap jk <Esc>
 inoremap kj <Esc>
+" We can't use the same mapping in terminal window
+" since these key are also used for navigation.
+" We'll use ESC instead
+tnoremap <Esc> <C-\><C-n>
 
 " Easy CAPS
 inoremap <c-u> <ESC>viwUi
 nnoremap <c-u> viwU<Esc>
 
-" ] - Switch tabs forward
-nnoremap ] :tabnext<CR>
-" [ - Switch tabs backwards
-nnoremap [ :tabprevious<CR>
+" ALT-TAB - Switch tabs forward
+nnoremap <A-TAB> :tabnext<CR>
+" ALT-q - Switch tabs backwards
+" nnoremap <A-q> :tabprevious<CR>
 
 " TAB in general mode will move to text buffer
 nnoremap <TAB> :bnext<CR>

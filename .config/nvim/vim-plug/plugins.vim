@@ -33,5 +33,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-commentary'
     " Quickscope - an always-on highlight for an unique characrer
     Plug 'unblevable/quick-scope'
-    
+    " Floating terminal window
+    Plug 'voldikss/vim-floaterm'
+
     call plug#end()

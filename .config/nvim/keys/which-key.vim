@@ -24,15 +24,38 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Single mappings
-"let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle'  , 'comment' ]
-"let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'explorer' ]
-"let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
+"let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle' , 'comment' ]
+"let g:which_key_map['e'] = [ ':CocCommand explorer'      , 'explorer' ]
+let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
 let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
 let g:which_key_map['r'] = [ ':RnvimrToggle'              , 'ranger' ]
 let g:which_key_map['S'] = [ ':Startify'                  , 'start screen' ]
-"let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
+let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
-"let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
+"let g:which_key_map['z'] = [ 'Goyo'                      , 'zen' ]
+let g:which_key_map['w'] = [ ':set nospell'               , 'Disable spell-chec' ]
+let g:which_key_map['W'] = [ ':set spell'                 , 'Enable spell-chec' ]
+
+let g:which_key_map.w = {
+      \ 'name' : '+words spell check' ,
+      \ 'e' : [':set spell spellang=en_us'  , 'enable'],
+      \ 'd' : [':set nospell'               , 'disable'],
+      \ 'a' : ['zg'                         , 'add word to dictionary'],
+      \ 'n' : [']s'                         , 'next misspelled word'],
+      \ 'N' : ['[s'                         , 'previous misspelled word'],
+      \ }
+
+let g:which_key_map.t = {
+      \ 'name' : '+terminal' ,
+      \ 't' : [':FloatermNew --wintype=normal --height=6'        , 'terminal'],
+      \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
+      \ 'g' : [':FloatermNew lazygit'                           , 'lazygit'],
+      \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
+      \ 'p' : [':FloatermNew python3'                            , 'python'],
+      \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
+      \ '`' : [':FloatermToggle'                                , 'toggle'],
+      \ 'y' : [':FloatermNew bottom'                            , 'bottom system monitor'],
+      \ }
 
 " c is for configuration
 let g:which_key_map.c = {
@@ -53,7 +76,7 @@ let g:which_key_map.b = {
       \}
 
 " t is for tabs
-let g:which_key_map.t = {
+let g:which_key_map.a = {
       \ 'name' : '+tabs' ,
       \ 'n' : [':tabnext'       , 'next'],
       \ 'p' : [':tabprevious'   , 'previous'],

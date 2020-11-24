@@ -1,11 +1,11 @@
 " set leader key
 let g:mapleader = "\<Space>"
 
-syntax enable                           " Enables syntax highlighing
+syntax enable                           " Enables syntax highlighting
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
-set pumheight=10                        " Makes popup menu smaller
+set pumheight=10                        " Makes pop-up menu smaller
 set fileencoding=utf-8                  " The encoding written to file
 set ruler              			            " Show the cursor position all the time
 set cmdheight=1                         " More space for displaying messages
@@ -22,19 +22,27 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set laststatus=2                        " Always display the status line
-set number                             " Absolute line numbers
-" set relativenumber                      " Relative line numbers
-" set cursorline                          " Enable highlighting of the current line
-set background=dark                     " tell vim what the background color looks like
-set showtabline=1                       " Show tabs only when ther's more than one active tab
+set number                              " Absolute line numbers
+" set relativenumber                    " Relative line numbers 
+" set cursorline                        " Enable highlighting of the current line
+set background=dark                     " tell Vim what the background color looks like
+set showtabline=1                       " Show tabs only when there's more than one active tab
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
-set nobackup                            " This is recommended by coc
-set nowritebackup                       " This is recommended by coc
+set nobackup                            " This is recommended by COC
+set nowritebackup                       " This is recommended by COC
 set updatetime=300                      " Faster completion
-set timeoutlen=500                      " By default timeoutlen is 1000 ms
-set formatoptions-=r                    " Stop newline continution of comments
-set clipboard=unnamedplus               " Copy paste between vim and everything else
+set timeoutlen=500                      " By default timeout length is 1000 ms
+set formatoptions-=r                    " Stop newline continuation of comments
+set clipboard=unnamedplus               " Copy paste between Vim and everything else
 "set autochdir                          " Your working directory will always be the same as your working directory
+set spell spelllang=en_us               " Enable spell check for US English
+
+" Change the default Bad Spelling highlight 
+hi clear SpellBad
+hi SpellBad ctermfg=131 cterm=underline
+
+" Change the default line numbers color
+" hi LineNr ctermfg=1 ctermbg=black
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
