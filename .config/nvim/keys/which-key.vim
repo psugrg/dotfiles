@@ -50,7 +50,6 @@ let g:which_key_map.t = {
       \ 't' : [':FloatermNew --wintype=normal --height=6'        , 'terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                           , 'lazygit'],
-      \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
       \ 'p' : [':FloatermNew python3'                            , 'python'],
       \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
       \ '`' : [':FloatermToggle'                                , 'toggle'],
