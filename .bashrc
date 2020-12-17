@@ -129,7 +129,7 @@ function git-branch-prompt {
 PS1="\u@\h \[\033[0;36m\]\W\[\033[0m\]\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\] \$ "
 
 # Dotfiles handling alias (works similar to git since it's an aliwas for it)
-#lias config='/usr/bin/git --git-dir=/home/p/.cfg/ --work-tree=/home/p'
+alias config='/usr/bin/git --git-dir=/home/p/.cfg/ --work-tree=/home/p'
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>

@@ -68,6 +68,10 @@ bindkey -M menuselect 'right' vi-forward-char
 # Fix backspace bug when switching modes
 bindkey "^?" backward-delete-char
 
+# Bind jk and kj as esc
+bindkey jk vi-cmd-mode
+bindkey kj vi-cmd-mode
+
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
