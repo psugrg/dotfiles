@@ -7,6 +7,8 @@ else
   REPO=$@
 fi
 
+echo cloning $REPO
+
 git clone --bare $REPO $HOME/.cfg
 function config {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
