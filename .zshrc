@@ -118,6 +118,7 @@ alias config='/usr/bin/git --git-dir=/home/p/.cfg/ --work-tree=/home/p'
 alias ls='ls --color'
 alias la='ls -al --color'
 alias c='cd $@ &&  ls --color'
+alias ff='ranger'
 
 # ARCHIVE EXTRACTION
 # usage: ex <file>
