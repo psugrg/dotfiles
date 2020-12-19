@@ -1,12 +1,12 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
-# Change the sumbol
-#           ❯ ➜          
+# Change the symbol (Remember to install NerdFonts on your system)
+# ❯ ➜ 
 [character]
-success_symbol = "[](green)"
-error_symbol = "[](red)"
-vicmd_symbol = "[](#ff7b00)" # Orange
+success_symbol = "[](green)"
+error_symbol = "[](red)"
+vicmd_symbol = "[](#f133ff)" 
 
 # Disable the package module, hiding it from the prompt completely
 [package]

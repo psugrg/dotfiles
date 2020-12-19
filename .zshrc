@@ -119,6 +119,7 @@ alias ls='ls --color'
 alias la='ls -al --color'
 alias c='cd $@ &&  ls --color'
 alias ff='ranger'
+alias vi='nvim'
 
 # ARCHIVE EXTRACTION
 # usage: ex <file>
@@ -150,6 +151,9 @@ ex ()
 # Load plugins
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+
+# Configure plugins
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 # Initialize Startship prompt
 eval "$(starship init zsh)"
