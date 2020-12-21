@@ -120,6 +120,7 @@ alias la='ls -al --color'
 alias c='cd $@ &&  ls --color'
 alias ff='ranger'
 alias vi='nvim'
+alias q='exit'
 
 # ARCHIVE EXTRACTION
 # usage: ex <file>
