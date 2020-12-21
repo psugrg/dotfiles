@@ -5,7 +5,11 @@ sudo apt-get update && \
   sudo apt-get upgrade -y && \
   sudo apt-get install -y \
   ranger \
-  wget
+  wget \
+  zsh \
+  zsh-autosuggestions \
+  zsh-common \
+  zsh-syntax-highlighting
 
 # Install Starship prompt
 curl -fsSL https://starship.rs/install.sh | bash
