@@ -116,12 +116,18 @@ precmd() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 alias config='/usr/bin/git --git-dir=/home/p/.cfg/ --work-tree=/home/p'
 
 # Commands aliases
-alias ls='ls --color'
+alias ls='ls --color --group-directories-first'
 alias la='ls -al --color'
-alias c='cd $@ &&  ls --color'
 alias ff='ranger'
 alias vi='nvim'
 alias q='exit'
+alias ..='cd ..'
+
+c ()
+{
+  cd $@
+  ls
+}
 
 # ARCHIVE EXTRACTION
 # usage: ex <file>
