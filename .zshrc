@@ -123,12 +123,6 @@ alias vi='nvim'
 alias q='exit'
 alias ..='cd ..'
 
-c ()
-{
-  cd $@
-  ls
-}
-
 # ARCHIVE EXTRACTION
 # usage: ex <file>
 ex ()
