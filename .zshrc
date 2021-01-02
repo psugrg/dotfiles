@@ -34,7 +34,7 @@ _comp_options+=(globdots)
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 # zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' format '▫▫▫▫▫ %d ▫▫'
+zstyle ':completion:*' format '❯❯❯ ❲ %d ❳'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select
 eval "$(dircolors -b)"
@@ -149,6 +149,9 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+# Load optional ssh aliases
+source ~/.config/ssh_aliases.zsh 2>/dev/null
 
 # Load plugins
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
