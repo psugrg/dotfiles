@@ -16,7 +16,7 @@ curl -fsSL https://starship.rs/install.sh | bash
 
 # Nerd Fonts to be installed
 # https://www.nerdfonts.com/font-downloads
-NERD_FONTS="SourceCodePro SpaceMono ShareTechMono"
+NERD_FONTS="SourceCodePro SpaceMono"
 NERD_FONTS_VER=v2.1.0
 
 # Download fonts
