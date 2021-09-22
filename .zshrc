@@ -165,5 +165,7 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 # Configure plugins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
+# Disable default prompt before activating Staship prompt
+prompt off
 # Initialize Startship prompt
 eval "$(starship init zsh)"
