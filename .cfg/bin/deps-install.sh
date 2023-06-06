@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Install dependencies
 sudo apt-get update && \
@@ -12,7 +12,7 @@ sudo apt-get update && \
   zsh-syntax-highlighting
 
 # Install Starship prompt
-curl -fsSL https://starship.rs/install.sh | bash
+sudo curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 # Nerd Fonts to be installed
 # https://www.nerdfonts.com/font-downloads
