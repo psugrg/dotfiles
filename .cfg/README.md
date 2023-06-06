@@ -1,8 +1,6 @@
 # Dotfile repository
 
-## It follows the rules described
-
-<https://www.atlassian.com/git/tutorials/dotfiles>
+This repository follows the rules described at <https://www.atlassian.com/git/tutorials/dotfiles>
 
 ## Installation on a new machine
 
