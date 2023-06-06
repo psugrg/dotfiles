@@ -28,3 +28,10 @@ done
 
 # Install fonts
 sudo fc-cache -fv
+
+# Change shell to ZSH
+sudo chsh -s /bin/zsh $USER
+
+echo 
+echo 
+echo Reboot your machine to finish configuration process!
