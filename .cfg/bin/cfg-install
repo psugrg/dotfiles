@@ -11,7 +11,7 @@ echo Cloning $REPO
 
 git clone --bare $REPO $HOME/.cfg
 
-config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@'
+config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME '
 
 mkdir -p .config-backup
 $config checkout -f
