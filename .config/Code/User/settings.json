@@ -58,10 +58,13 @@
   "editor.formatOnPaste": true,
   "workbench.colorTheme": "GitHub Dark Default",
   "cSpell.userWords": [
+    "Contenerized",
+    "eabi",
     "tinyxml"
   ],
   "todohighlight.isEnable": true,
   "redhat.telemetry.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
   "C_Cpp.vcFormat.indent.lambdaBracesWhenParameter": false,
+  "git.autofetch": true,
 }
