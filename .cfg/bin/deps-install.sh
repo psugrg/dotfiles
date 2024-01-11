@@ -16,8 +16,8 @@ sudo curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 # Nerd Fonts to be installed
 # https://www.nerdfonts.com/font-downloads
-NERD_FONTS="SourceCodePro SpaceMono"
-NERD_FONTS_VER=v2.1.0
+NERD_FONTS="SourceCodePro SpaceMono CascadiaCode CascadiaMono"
+NERD_FONTS_VER=v3.1.1
 
 # Download fonts
 for FONT in $NERD_FONTS
