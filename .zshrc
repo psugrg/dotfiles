@@ -158,6 +158,9 @@ ex ()
 # Load optional ssh aliases
 source ~/.config/ssh_aliases.zsh 2>/dev/null
 
+# Load optional non-versioned configuration
+source ~/.zshrc_local.zsh 2>/dev/null
+
 # Load plugins
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
