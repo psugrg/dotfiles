@@ -1,6 +1,6 @@
 # This configuration is inspired by https://starship.rs/presets/pastel-powerline.html
 #
-# 󰽣 𝒮𝓈     󰛕 󰘩 󰐅 
+# 󰽣 𝒮𝓈     󰛕 󰘩 󰐅  
 
 format = """
 [ 𝒮𝓈](bg:#9A348E)\
@@ -27,6 +27,7 @@ truncation_symbol = "…/"
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
+"~" = ""
 "Documents" = "󰈙 "
 "Downloads" = " "
 "Music" = " "
