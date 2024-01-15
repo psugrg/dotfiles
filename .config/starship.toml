@@ -1,6 +1,6 @@
 # This configuration is inspired by https://starship.rs/presets/pastel-powerline.html
 #
-# 𝒮𝓈    
+# 󰽣 𝒮𝓈     󰛕 󰘩 󰐅 
 
 format = """
 [ 𝒮𝓈](bg:#9A348E)\
