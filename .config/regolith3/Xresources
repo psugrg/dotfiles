@@ -1,0 +1,6 @@
+wm.window.border.size: 2
+wm.gaps.smart: false
+wm.hide.edge.borders: none
+wm.client.focused.color.child_border: #FFA500
+wm.client.focused.color.background: #FFA500
+
