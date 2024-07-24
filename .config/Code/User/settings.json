@@ -67,4 +67,10 @@
   "security.workspace.trust.untrustedFiles": "open",
   "C_Cpp.vcFormat.indent.lambdaBracesWhenParameter": false,
   "git.autofetch": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "terminal.integrated.fontFamily": "SauceCodePro Nerd Font Mono",
+  "editor.fontFamily": "SauceCodePro Nerd Font Mono",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
 }
