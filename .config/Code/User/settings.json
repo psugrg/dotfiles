@@ -8,42 +8,22 @@
   "vim.hlsearch": true,
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "j",
-        "k"
-      ],
-      "after": [
-        "<Esc>"
-      ]
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
     },
     {
-      "before": [
-        "k",
-        "j"
-      ],
-      "after": [
-        "<Esc>"
-      ]
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<leader>",
-        "d"
-      ],
-      "after": [
-        "d",
-        "d"
-      ]
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
     },
     {
-      "before": [
-        "<C-n>"
-      ],
-      "commands": [
-        ":nohl"
-      ]
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
     }
   ],
   "vim.leader": "<space>",
@@ -56,11 +36,14 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.formatOnPaste": true,
-  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.colorTheme": "Default Light Modern",
   "cSpell.userWords": [
     "Contenerized",
     "eabi",
-    "tinyxml"
+    "Feropi",
+    "subdomena",
+    "tinyxml",
+    "Zenbox"
   ],
   "todohighlight.isEnable": true,
   "redhat.telemetry.enabled": false,
@@ -69,8 +52,10 @@
   "git.autofetch": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.donotVerifyTags": true,
+  "window.menuBarVisibility": "toggle",
   "terminal.integrated.fontFamily": "SauceCodePro Nerd Font Mono",
   "editor.fontFamily": "SauceCodePro Nerd Font Mono",
+  "cSpell.language": "en,pl",
   "explorer.confirmDragAndDrop": false,
-  "explorer.confirmDelete": false,
+  "explorer.confirmDelete": false
 }
