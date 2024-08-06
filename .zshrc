@@ -155,6 +155,17 @@ ex ()
   fi
 }
 
+export EDITOR=nvim
+
+# Notes & Quick-Notes
+export QNOTES_PATH=~/notes/quick-notes
+alias qnote='~/notes/.bin/qnote.sh'
+notes()
+{
+    cd ~/notes
+    nvim .
+}
+
 # Load optional ssh aliases
 source ~/.config/ssh_aliases.zsh 2>/dev/null
 
