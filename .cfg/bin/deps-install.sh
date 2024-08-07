@@ -5,6 +5,7 @@ sudo apt-get update && \
   sudo apt-get install -y \
   ranger \
   wget \
+  fzf \
   zsh \
   zsh-autosuggestions \
   zsh-common \
