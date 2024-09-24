@@ -123,11 +123,6 @@ alias vi='nvim'
 alias q='exit'
 alias ..='cd ..'
 
-# Doom emacs aliases
-alias doom-sync='$HOME/.emacs.d/bin/doom sync'
-alias doom-upgrade='$HOME/.emacs.d/bin/doom upgrade'
-alias doom-doctor='$HOME/.emacs.d/bin/doom doctor'
-
 # ARCHIVE EXTRACTION
 # usage: ex <file>
 ex ()
