@@ -23,3 +23,11 @@ curl -Lks https://raw.githubusercontent.com/psugrg/dotfiles/master/.cfg/bin/cfg-
 ```sh
 curl -Lks https://raw.githubusercontent.com/psugrg/dotfiles/master/.cfg/bin/deps-install.sh | /bin/sh
 ```
+
+## Known issues
+
+Sometimes the ZSH shell will not be set as a defoult shell. To fix that run the following command and log-out/log-in to your machine
+
+```sh
+sudo chsh -s /bin/zsh $USER
+```
