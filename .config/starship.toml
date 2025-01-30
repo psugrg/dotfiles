@@ -1,9 +1,9 @@
 # This configuration is inspired by https://starship.rs/presets/pastel-powerline.html
 #
-# 󰽣 𝒮𝓈     󰛕 󰘩 󰐅  
+# 󰽣 𝒮 𝓈      󰛕 󰘩 󰐅    󱥘 󰮯  󱙝  󰯉  󰮭  󰀜  
 
 format = """
-[ 𝒮𝓈](bg:#9A348E)\
+[ 󰯉  ](bg:#9A348E)\
 [](bg:#DA627D fg:#9A348E)\
 $directory\
 [](fg:#DA627D bg:#FCA17D)\
