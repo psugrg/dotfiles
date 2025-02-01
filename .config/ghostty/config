@@ -11,3 +11,8 @@ keybind = ctrl+d=new_split:right
 
 # Empty values reset the configuration to the default value
 font-family = CascaydiaMono Nerd Font
+
+# Disable font ligatures
+font-feature = -calt
+font-feature = -lig
+font-feature = -dlig
