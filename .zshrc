@@ -1,78 +1,54 @@
-# Zsh configuration file
+# ZSH Configuration file
 #
-# Requirements:
-# sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting
+# Type `zinit status` in your terminal to get the status of the configuration.
+#
+# Deps:
+# - fzf
+#       sudo apt install fzf
+#       brew install fzf
 
-# Enable colors
-autoload -U colors && colors
+# Check deps
+if ! fzf --version > /dev/null 2>&1; then
+    echo Please install the required FZF package!
+fi
 
-# Set up the prompt
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
-autoload -Uz promptinit
-promptinit
-prompt adam1
+# Zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+zinit light ajeetdsouza/zoxide
 
-setopt histignorealldups sharehistory
+# Load completions
+autoload -U compinit && compinit
 
+# Replay all cached completions as mentioned in the documentation
+zinit cdreplay -q
+
+# Fix problem with ghostty
+export TERM=xterm-256color
+
+# KEY BINDINGS
 # Use vi mode
 bindkey -v
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
-
-# Enable searching through history
+# HIST: History search next, prev
+bindkey '^k' history-search-backward
+bindkey '^j' history-search-forward
+# HIST: Enable searching through history
 bindkey '^R' history-incremental-pattern-search-backward
-
-# Use modern completion system
-autoload -Uz compinit
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)
-
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-# zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' format '❯❯❯ ❲ %d ❳'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select
-eval "$(dircolors -b)"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-# zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
-
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-
-# Edit line in vim buffer ctrl-v
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^v' edit-command-line
-# Enter vim buffer from normal mode
-autoload -U edit-command-line && zle -N edit-command-line && bindkey -M vicmd "^v" edit-command-line
-
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'left' vi-backward-char
-bindkey -M menuselect 'down' vi-down-line-or-history
-bindkey -M menuselect 'up' vi-up-line-or-history
-bindkey -M menuselect 'right' vi-forward-char
-# Fix backspace bug when switching modes
+# VIM: Fix backspace bug when switching modes
 bindkey "^?" backward-delete-char
-
-# Bind jk and kj as esc
+# VIM: Bind jk and kj as esc
 bindkey jk vi-cmd-mode
 bindkey kj vi-cmd-mode
+# END KEY BINDINGS
 
+# VIM MODE CONFIGURATION
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
@@ -86,71 +62,46 @@ function zle-keymap-select {
   fi
 }
 zle -N zle-keymap-select
+# END VIM MODE CONFIGURATION
 
-# ci", ci', ci`, di", etc
-autoload -U select-quoted
-zle -N select-quoted
-for m in visual viopp; do
-  for c in {a,i}{\',\",\`}; do
-    bindkey -M $m $c select-quoted
-  done
-done
+# HISTORY CONFIGURATION
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+# END HISTORY CONFIGURATION
 
-# ci{, ci(, ci<, di{, etc
-autoload -U select-bracketed
-zle -N select-bracketed
-for m in visual viopp; do
-  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
-    bindkey -M $m $c select-bracketed
-  done
-done
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-precmd() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+# AUTO COMPLETION CONFIGURATION
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':completion:*' fzf-search-display true
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+
+# END AUTO COMPLETION CONFIGURATION
 
 # Dotfiles 
-alias config='/usr/bin/git --git-dir=/home/p/.cfg/ --work-tree=/home/p'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Commands aliases
-alias ls='ls --color --group-directories-first'
+alias ls='ls --color'
 alias la='ls -al --color'
-alias ff='ranger'
-alias vi='nvim'
-alias q='exit'
-alias ..='cd ..'
 
-# ARCHIVE EXTRACTION
-# usage: ex <file>
-ex ()
-{
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;      
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
-
+# Default editor: Neo-Vim
 export EDITOR=nvim
+
+# SHELL INTEGRATION CONFIGURATION
+# Fuzzy Finding integration
+eval "$(fzf --zsh)"
+# END SHELL INTEGRATION CONFIGURATION
 
 # Notes & Quick-Notes
 export QNOTES_PATH=~/notes/quick-notes
@@ -167,14 +118,5 @@ source ~/.config/ssh_aliases.zsh 2>/dev/null
 # Load optional non-versioned configuration
 source ~/.zshrc_local.zsh 2>/dev/null
 
-# Load plugins
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-
-# Configure plugins
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
-
-# Disable default prompt before activating Staship prompt
-prompt off
 # Initialize Startship prompt
 eval "$(starship init zsh)"
