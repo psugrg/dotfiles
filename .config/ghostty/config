@@ -16,3 +16,6 @@ font-family = CascaydiaMono Nerd Font
 font-feature = -calt
 font-feature = -lig
 font-feature = -dlig
+
+# Border top,bottom
+window-padding-y = 0,8
