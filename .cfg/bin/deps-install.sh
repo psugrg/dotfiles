@@ -9,7 +9,8 @@ sudo apt-get update && \
   zsh \
   zsh-autosuggestions \
   zsh-common \
-  zsh-syntax-highlighting
+  zsh-syntax-highlighting \
+  tmux
 
 # Install Starship prompt
 # First, create a folder required by starship
@@ -31,6 +32,9 @@ done
 
 # Install fonts
 sudo fc-cache -fv
+
+# Install tmux-plugin-manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Change shell to ZSH
 sudo chsh -s /bin/zsh $USER
