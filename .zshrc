@@ -107,8 +107,10 @@ export QNOTES_PATH=~/notes/quick-notes
 alias qnote='~/notes/.bin/qnote.sh'
 notes()
 {
+    pushd . > /dev/null
     cd ~/notes
     nvim .
+    popd > /dev/null
 }
 
 # Load optional ssh aliases
