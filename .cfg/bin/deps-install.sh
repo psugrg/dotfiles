@@ -15,15 +15,6 @@ sudo apt-get update && sudo apt-get install -y \
   zsh-common \
   zsh-syntax-highlighting
 
-# Install Deno (needed by neo-vim markdown-preview plugin)
-curl -fsSL https://deno.land/install.sh | sh
-
-# Install lazy-git
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
-curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-tar xf lazygit.tar.gz lazygit
-sudo install lazygit -D -t /usr/local/bin/
-
 # Install Starship prompt
 # First, create a folder required by starship
 sudo mkdir -p /usr/local/bin
