@@ -4,7 +4,7 @@
 # ─ ▕                 
 
 format = """
-[ 󰯉  ](bg:#9A348E)\
+[ 󰯉  ](bg:#9A348E fg:#FFFFFF)\
 [](bg:#DA627D fg:#9A348E)\
 $directory\
 [](fg:#DA627D bg:#FCA17D)\
@@ -20,7 +20,7 @@ $git_status\
 # add_newline = false
 
 [directory]
-style = "bg:#DA627D"
+style = "bg:#DA627D fg:#FFFFFF"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
