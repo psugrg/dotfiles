@@ -13,13 +13,8 @@ sudo apt-get update && sudo apt-get install -y \
   zsh \
   zsh-autosuggestions \
   zsh-common \
-  zsh-syntax-highlighting
-
-# Install Starship prompt
-# First, create a folder required by starship
-sudo mkdir -p /usr/local/bin
-# and then, install Starship using
-sudo curl -sS https://starship.rs/install.sh | sh -s -- -y
+  zsh-syntax-highlighting \
+  starship
 
 # Nerd Fonts to be installed
 # https://www.nerdfonts.com/font-downloads
