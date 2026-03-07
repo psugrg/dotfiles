@@ -13,8 +13,7 @@ sudo apt-get update && sudo apt-get install -y \
   zsh \
   zsh-autosuggestions \
   zsh-common \
-  zsh-syntax-highlighting \
-  starship
+  zsh-syntax-highlighting
 
 # Nerd Fonts to be installed
 # https://www.nerdfonts.com/font-downloads
@@ -30,6 +29,9 @@ done
 
 # Install fonts
 sudo fc-cache -fv
+
+# Install starship prompt
+curl -sS https://starship.rs/install.sh | sh
 
 # Install tmux-plugin-manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
