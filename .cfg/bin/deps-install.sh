@@ -7,8 +7,6 @@ sudo apt-get update && sudo apt-get install -y \
   python3 \
   python3-pip \
   python3-venv \
-  ranger \
-  tmux \
   wget \
   zsh \
   zsh-autosuggestions \
@@ -32,6 +30,13 @@ sudo fc-cache -fv
 
 # Install starship prompt
 curl -sS https://starship.rs/install.sh | sh
+
+# Install tmux
+TMUX_VER=3.5a
+curl -LO https://github.com/tmux/tmux-builds/releases/download/3.5a/tmux-$TMUX_VER-x86_64.tar.gz
+tar -xzf tmux-$TMUX_VER-x86_64.tar.gz
+sudo mv tmux /usr/local/bin
+rm tmux-$TMUX_VER-x86_64.tar.gz
 
 # Install tmux-plugin-manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
