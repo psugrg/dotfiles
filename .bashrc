@@ -129,7 +129,7 @@ function git-branch-prompt {
 PS1="\u@\h \[\033[0;36m\]\W\[\033[0m\]\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\] \$ "
 
 # Dotfiles handling alias (works similar to git since it's an aliwas for it)
-alias config='/usr/bin/git --git-dir=/home/p/.cfg/ --work-tree=/home/p'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
@@ -158,3 +158,6 @@ ex ()
   fi
 }
 
+. "/home/p/.deno/env"
+source /home/p/.local/share/bash-completion/completions/deno.bash
+. "$HOME/.cargo/env"
