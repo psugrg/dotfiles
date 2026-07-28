@@ -7,6 +7,9 @@
 #       sudo apt install fzf
 #       brew install fzf
 
+# Initialize and add fzf to the path
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Check deps
 if ! fzf --version > /dev/null 2>&1; then
     echo Please install the required FZF package!
@@ -121,3 +124,4 @@ source ~/.zshrc_local.zsh 2>/dev/null
 
 # Initialize Startship prompt
 eval "$(starship init zsh)"
+

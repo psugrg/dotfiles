@@ -2,7 +2,6 @@
 
 # Install dependencies
 sudo apt-get update && sudo apt-get install -y \
-  fzf \
   npm \
   python3 \
   python3-pip \
@@ -27,6 +26,10 @@ done
 
 # Install fonts
 sudo fc-cache -fv
+
+# Install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --key-bindings --completion --no-update-rc
 
 # Install starship prompt
 curl -sS https://starship.rs/install.sh | sh

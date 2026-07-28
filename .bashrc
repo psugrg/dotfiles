@@ -161,3 +161,5 @@ ex ()
 . "/home/p/.deno/env"
 source /home/p/.local/share/bash-completion/completions/deno.bash
 . "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
