@@ -52,7 +52,6 @@
   "git.autofetch": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.donotVerifyTags": true,
-  "window.menuBarVisibility": "toggle",
   "terminal.integrated.fontFamily": "SauceCodePro Nerd Font Mono",
   "editor.fontFamily": "SauceCodePro Nerd Font Mono",
   "cSpell.language": "en,pl",
