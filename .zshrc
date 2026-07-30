@@ -6,7 +6,7 @@
 # - fzf
 #       sudo apt install fzf
 #       brew install fzf
-if [[ ":$FPATH:" != *":/home/p/.zsh/completions:"* ]]; then export FPATH="/home/p/.zsh/completions:$FPATH"; fi
+if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
 
 # Initialize and add fzf to the path
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -126,4 +126,4 @@ source ~/.zshrc_local.zsh 2>/dev/null
 # Initialize Startship prompt
 eval "$(starship init zsh)"
 
-export PATH="/home/p/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
