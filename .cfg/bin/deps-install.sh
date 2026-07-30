@@ -44,6 +44,11 @@ rm tmux-$TMUX_VER-linux-x86_64.tar.gz
 # Install tmux-plugin-manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# Install herdr terminal multiplexer (new tmux)
+# NOTE: This will probably replace the tmux in the near future (in this configuration)
+
+curl -fsSL https://herdr.dev/install.sh | sh
+
 # Change shell to ZSH
 sudo chsh -s /bin/zsh $USER
 
