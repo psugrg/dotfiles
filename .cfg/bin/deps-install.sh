@@ -46,8 +46,14 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install herdr terminal multiplexer (new tmux)
 # NOTE: This will probably replace the tmux in the near future (in this configuration)
-
 curl -fsSL https://herdr.dev/install.sh | sh
+
+# Install Rust and Cargo (needed by the nvim-treesitter)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Install tree-sitter-cli for Neovim
+# The new version from the `main` branch requires a separate installation
+cargo install tree-sitter-cli --locked
 
 # Change shell to ZSH
 sudo chsh -s /bin/zsh $USER
